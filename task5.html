@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Форма для перевірки доступу</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container mt-5">
+  <h1>Перевірка доступу</h1>
+  <form>
+    <div class="form-group">
+      <label for="age">Введіть свій вік:</label>
+      <input type="number" class="form-control" id="age" name="age" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Перевірити</button>
+  </form>
+</div>
+
+<!-- Модальне вікно для віку >= 18 -->
+<div class="modal fade" id="accessModal" tabindex="-1" role="dialog" aria-labelledby="accessModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="accessModalLabel">Доступ надано</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Ваш вік дорівнює або більше 18 років, тому доступ надано.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">ОК</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Модальне вікно для віку < 18 -->
+<div class="modal fade" id="noAccessModal" tabindex="-1" role="dialog" aria-labelledby="noAccessModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="noAccessModalLabel">Доступ заборонено</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Ваш вік менше 18 років, чи маєте ви доступ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btnbtn-primary" data-dismiss="modal">ОК</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+<p> </p>
+<p><a href="list_task.php" class="btn btn-primary" role="button">List Task</a> </p>
+<p> </p>
+<p><a href="https://github.com/danridepdanri/all_task/blob/main/task5" class="btn btn-primary" role="button">Git</a> </p>
+<script>
+  $(document).ready(function() {
+    $('form').submit(function(e) {
+      e.preventDefault();
+      var age = $('#age').val();
+      if (age >= 18) {
+        $('#accessModal').modal('show');
+      } else {
+        $('#noAccessModal').modal('show');
+      }
+    });
+  });
+</script>
+</body>
+</html>

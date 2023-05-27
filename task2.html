@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Регистрация на конференцию</title>
+    <!-- Подключение Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center my-5">Реєстрація на конференцію</h1>
+    <form action="task2.html" method="post">
+        <div class="form-group">
+            <label for="surname">Прізвище:</label>
+            <input type="text" class="form-control" id="surname" name="surname" maxlength="25" required>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Ім'я:</label>
+            <input type="text" class="form-control" id="name" name="name" maxlength="25" required>
+        </div>
+
+        <div class="form-group">
+            <label for="patronymic">По-батькові:</label>
+            <input type="text" class="form-control" id="patronymic" name="patronymic" maxlength="25" required>
+        </div>
+
+        <div class="form-group">
+            <label>Возраст:</label><br>
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" id="age-1" name="age" value="До 20 лет" required>
+                <label class="form-check-label" for="age-1">До 20 років</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" id="age-2" name="age" value="От 20 до 30 лет" required>
+                <label class="form-check-label" for="age-2">Від 20 до 30 років</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" id="age-3" name="age" value="От 30 до 50 лет" required>
+                <label class="form-check-label" for="age-3">Від 30 до 50 років</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" id="age-4" name="age" value="50 и более лет" required>
+                <label class="form-check-label" for="age-4">50 і більше років</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="language">Мова:</label>
+            <select class="form-control" id="language" name="language" required>
+                <option value="Английский">Англійська</option>
+                <option value="Немецкий">Німецька</option>
+                <option value="Французский">Французька</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="file-format">Формат подачі доповіді:</label>
+            <select class="form-control" id="file-format" name="file-format" required>
+                <option value="Текст">Текст</option>
+                <option value="PDF">PDF</option>
+                <option value="Документ Ворд">Документ Ворд</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="presentation-title">Назва доповіді:</label>
+            <textarea class="form-control" id="presentation-title" name="presentation-title" rows="5" maxlength="25" required></textarea>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Відправити</button>
+            <button type="reset" class="btn btn-secondary">Відмінити</button>
+        </div>
+    </form>
+</div>
+
+<p> </p>
+<p><a href="list_task.php" class="btn btn-primary" role="button">List Task</a> </p>
+<p> </p>
+<p><a href="https://github.com/danridepdanri/all_task/blob/main/task2" class="btn btn-primary" role="button">Git</a> </p>
+<!-- Подключение скриптов Bootstrap -->
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNVQ8" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

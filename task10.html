@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AVG 10</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h2 class="text-center">Середнє арифметичне додатніх чисел</h2>
+      <form>
+        <div class="form-group">
+          <label for="inputArray">Введіть масив із 10 цілих чисел:</label>
+          <input type="text" class="form-control" id="inputArray" placeholder="Введіть масив">
+        </div>
+        <button type="button" class="btn btn-primary" onclick="showAverage()">Обчислити середнє арифметичне</button>
+      </form>
+      <div id="result" class="mt-3"></div>
+    </div>
+  </div>
+</div>
+
+<p> </p>
+<p><a href="list_task.php" class="btn btn-primary" role="button">List Task</a> </p>
+<p> </p>
+<p><a href="https://github.com/danridepdanri/all_task/blob/main/task10" class="btn btn-primary" role="button">Git</a> </p>
+<script>
+  function showAverage() {
+    // Отримання значення масиву з форми
+    var inputArray = document.getElementById("inputArray").value;
+
+    // Розбиття введеного рядка на масив чисел
+    var numbers = inputArray.split(",").map(Number);
+
+    // Обчислення середнього арифметичного додатніх чисел
+    var sum = 0;
+    var count = 0;
+    for (var i = 0; i < numbers.length; i++) {
+      if (numbers[i] > 0) {
+        sum += numbers[i];
+        count++;
+      }
+    }
+    var average = sum / count;
+
+    // Виведення результату
+    document.getElementById("result").innerHTML = "<div class='alert alert-success'>Середнє арифметичне додатніх чисел: " + average.toFixed(2) + "</div>";
+  }
+</script>
+
+</body>
+</html>

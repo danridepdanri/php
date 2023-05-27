@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Обчислення наближеного інтегралу</title>
+  <!-- Підключення стилів Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-5">
+  <h1>Обчислення наближеного інтегралу</h1>
+  <form>
+    <button type="submit" class="btn btn-primary">Обчислити інтеграл</button>
+  </form>
+  <div class="mt-3" id="result"></div>
+  <p> </p>
+  <p><a href="list_task.php" class="btn btn-primary" role="button">List Task</a> </p>
+  <p> </p>
+  <p><a href="https://github.com/danridepdanri/all_task/blob/main/task7" class="btn btn-primary" role="button">Git</a> </p>
+</div>
+
+<!-- Підключення скриптів Bootstrap та jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clfTf/r/nJ2jzy5+X3p25qd18stOr"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<script>
+  $(document).ready(function() {
+    $('form').submit(function(e) {
+      e.preventDefault();
+
+      var interval = 1 / 20; // Ширина кожної частини
+      var sum = 0;
+
+      for (var i = 0; i < 20; i++) {
+        var x = (i + 0.5) * interval; // Середина кожної частини
+        var fx = Math.exp(x); // Обчислення e в степені x
+        var area = fx * interval; // Площа прямокутника (висота * ширина)
+        sum += area;
+      }
+
+      $('#result').html('Наближена величина інтегралу: ' + sum);
+    });
+  });
+</script>
+</body>
+</html>
